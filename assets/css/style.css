@@ -1,0 +1,88 @@
+:root {
+    --primary-color: #f768e4;
+    --secondary-color: #272057;
+    --tertiary-color: #dbdbdb;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+
+  header .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  main h1 {
+    text-align: center;
+    margin: 25px;
+  }
+
+    .start-screen1 {
+      text-align: center;
+      margin: 2px 100px;
+      font-size: 18px;
+  }
+
+  main .start-screen2 {
+      text-align: center;
+      margin: 0px 190px;
+      font-size: 18px;
+
+  }
+
+  .quiz-questions {
+      font-size: 30px;
+  }
+
+
+  header .high-scores {
+      margin: 25px;
+  }
+
+  header a {
+      text-decoration: none;
+      color: var(--primary-color);
+  }
+
+  header .timer {
+      display: flex;
+      justify-content: flex-end;
+      margin: 25px;
+  }
+
+  main .buttons .start-screen {
+
+      justify-content: center;
+      width: 115px;
+      height: 45px;
+      font-size: 18px;
+      border-radius: 10px;
+      background-color: var(--secondary-color);
+      color: white;
+  }
+
+  main .headings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main .buttons {
+      margin: 30px;
+      justify-content: center;
+      display: flex;
+
+  }
+
+  main .buttons .start-screen:hover {
+      background-color: var(--primary-color);
+      color: white;
+  }
