@@ -1,181 +1,319 @@
-let mainTextEl = document.querySelector("#text");
+// Initialize Index.html containers.  Put section headings into variables.
+
 let mainButtonsEl = document.querySelector("#buttons");
-let headerEl = document.querySelector(".header-wrapper");
-// let viewScoresEl = document.querySelector(".high-scores");
-// let quizQuestionsEl = document.querySelector("#quiz-questions");
-// var tasksCompletedEl = document.querySelector("#tasks-completed");
-// var pageContentEl = document.querySelector("#page-content");
 
 
-// var listItemEl = document.createElement("li");
-// var listItemEl = document.createElement("li");
-// var listItemEl = document.createElement("li");
-// var listItemEl = document.createElement("li");
+let score = 0;
 
 
-// let startScreenHeading = document.createElement("h1");
-// document.getElementById("h1").innerHTML = "Coding Quiz Challenge";
+
+
+
+//Create Landing Page of Quiz App
 
 let startScreen = function () {
 
+    // Turn on HTML display elements for the page
 
-    // document.getElementById("start-screen1").style.display = "none";
-
-    // let viewScoresLinkEl = document.createElement("a");
-    // viewScoresLinkEl.innerHTML = ""
-
-    // let viewScoresLinkEl = document.createElement("div");
-    // viewScoresLinkEl.className = "high-scores";
-    // viewScoresLinkEl.innerHTML =
-    // "<a href = '#high-scores'>View High Scores</a>";
-
-    // // "<a href='high-scores'>View High Scores</a>";
-    // headerEl.appendChild(viewScoresLinkEl);
-
-
-    // let timerEl = document.createElement("div");
-    // timerEl.className = "timer";
-    // timerEl.innerHTML =
-    // "<p class = 'countdown'>Time: </p>";
-    // headerEl.appendChild(timerEl);
-
-
-    // let quizHeadingEl = document.createElement("h1");
-    // // taskInfoEl.className = "task-info";
-    // quizHeadingEl.innerHTML =
-    //     "Coding Quiz Challenge";
-
-
-    // mainTextEl.appendChild(quizHeadingEl);
-
-    // let quizDescriptionEl = document.createElement("p");
-    // quizDescriptionEl.id = "start-screen1";
-    // quizDescriptionEl.innerHTML = 
-    //     "Try to answer the following code related questions within the time limit.";
-
-
-    // mainTextEl.appendChild(quizDescriptionEl);
-
-    // let quizDescriptionEl2 = document.createElement("p");
-    // quizDescriptionEl2.className = "start-screen2";
-    // quizDescriptionEl2.innerHTML = 
-    //     "Keep in mind that incorrect answers will penalize your score/time by ten seconds!";
-
-
-    // mainTextEl.appendChild(quizDescriptionEl2);
-
-
-    // let quizButtonEl = document.createElement("button");
-    // quizButtonEl.className = "start-screen";
-    // quizButtonEl.innerHTML = 
-    //     "Start Quiz"
-
-    // mainButtonsEl.appendChild(quizButtonEl);
-
+    $ ("#high-scoresS").show();
+    $ ("#timerS").show();
+    $ ("#start-screen-headingS").show();
+    $ ("#start-screen1S").show();
+    $ ("#start-screen2S").show();
+    $("#start-screenS").show();
 
 };
 
-// let quizQuestionNumber = function () {
-//     // console.log("question number");
-//     // document.body.innerHTML = "";
-//     // console.log(true);
-// };
+
+//Lands on Page 1 of Quiz After Clicking Start Quiz on Intro Screen and Subsequent Pages of Quiz follow this one
+
+let quizQuestion1 = function () {
 
 
+    // Set HTML Elements
 
-let quizIntroScreen = function () {
+    $ ("#start-screen-headingS").hide();
+    $ ("#start-screen1S").hide();
+    $ ("#start-screen2S").hide();
+    $ ("#start-screenS").hide();
 
+    $ ("#quiz-questions1S").show();
+    $ ("#quiz-screen1S").show();
+};
 
-
-    // console.log("button pressed");
-
-    // let quizQuestionsDel = document.getElementsByClassName("start-screen1");
-    // document.body.innerHTML = "";
-
-    // let viewScoresLinkEl = document.createElement("div");
-    // viewScoresLinkEl.className = "high-scores";
-    // viewScoresLinkEl.innerHTML =
-    // "<a href = '#high-scores'>View High Scores</a>";
-
-    // // "<a href='high-scores'>View High Scores</a>";
-    // headerEl.appendChild(viewScoresLinkEl);
-
-    console.log(true);
-
-    // let timerEl = document.createElement("div");
-    // timerEl.className = "timer";
-    // timerEl.innerHTML =
-    // "<p class = 'timer'>Time: </p>";
-    // headerEl.appendChild(timerEl);
+let quizQuestion2 = function () {
 
 
-    // let timerView = document.createElement("p");
-    // timerView.innerHTML = 
-    // "Time";
+    // Set HTML Elements for Page Two of Quiz
 
-    // timerDisplayEl.appendChild(timerView);
+    $ ("#quiz-questions1S").hide();
+    $ ("#quiz-screen1S").hide();
+    $("#quiz-screen2S").show();
+    $("#quiz-questions11S").show(); 
+    $("#answerc").hide();
+    $("#answerw").hide();
+    console.log("Score is:" + score);
 
-    
-    // let quizQuestionsEl = document.createElement ("p")
-    // quizQuestionsEl.className = "quiz-questions";
-    // quizQuestionsEl.innerHTML = 
-    // quizQuestionNumber()
 
-    // mainTextEl.appendChild(quizQuestionsEl);
+};
+// Function for Page Three of Quiz
+
+let quizQuestion3 = function () {
+
+    $("#quiz-screen2S").hide();
+    $("#quiz-questions11S").hide(); 
+    $("#answerc").hide();
+    $("#answerw").hide();
+    $("#quiz-questions21S").show();
+    $("#quiz-screen3S").show();
+    console.log("Score is:" + score);
 
 };
 
-// debugger;
+let quizQuestion4 = function () {
+
+    $("#answerc").hide();
+    $("#answerw").hide();
+    $("#quiz-questions21S").hide();
+    $("#quiz-screen3S").hide();
+    $("#quiz-questions31S").show(); 
+    $("#quiz-screen4S").show();
+    console.log("Score is:" + score);
+
+};
+
+let quizQuestion5 = function () {
+
+    $("#answerc").hide();
+    $("#answerw").hide();
+    $("#quiz-questions31S").hide(); 
+    $("#quiz-screen4S").hide(); 
+    $("#quiz-questions41S").show(); 
+    $("#quiz-screen5S").show();
+    console.log("Score is:" + score);
+
+};
+
+
+
+
+// Process Mouse Clicks
+
 let taskButtonHandler = function(event) {
-    // get target element from event
     let targetEl = event.target;
 
-    let buttonIDs = [
-        "go-back",
-        "clear-button",
-        "high-score-button",
-        "start-screen",
-        "quiz-num1",
-        "quiz-num2",
-        "quiz-num3",
-        "quiz-num4",
-        "quiz-num11",
-        "quiz-num12",
-        "quiz-num13",
-        "quiz-num14",
-        "quiz-num21",
-        "quiz-num22",
-        "quiz-num23",
-        "quiz-num24",
-        "quiz-num31",
-        "quiz-num32",
-        "quiz-num33",
-        "quiz-num34",
-        "quiz-num41",
-        "quiz-num42",
-        "quiz-num43",
-        "quiz-num44"
-    ];
 
-    for (let i = 0; i < buttonIDs.length; i++) {
+// Starts Quiz By Loading First Page of Quiz
   
     if (targetEl.matches(".start-screen")) {
 
-        // document.getElementById("start-screen1").style.display = "none";
-
-
-        quizIntroScreen();
-        // debugger;
-    // } else if (targetEl.matches(".delete-btn")) {
-    //   var taskId = targetEl.getAttribute("data-task-id");
-    //   deleteTask(taskId);
-    // }
+        quizQuestion1();
     }
+
+// Page One of Quiz
+
+    else if (targetEl.matches("#quiz-num1")) {
+
+        // Incorrect Answer.  Display results.  After Delay take to next question
+
+        $ ("#answerw").show();
+
+        setTimeout(quizQuestion2, 1500);
+
+    } else if (targetEl.matches("#quiz-num2")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion2, 1500);
+
+    } else if (targetEl.matches("#quiz-num3")) {
+
+        $ ("#answerw").show();
+
+        setTimeout(quizQuestion2, 1500);
+    
+
+    } else if (targetEl.matches("#quiz-num4")) {
+    // This is the Correct Answer.  Displays Correct and Waits 3 sec and loads next page.
+
+        $ ("#answerc").show();
+
+        score++ ;
+
+
+        setTimeout(quizQuestion2, 1500);
+
+    }
+
+// Page Two
+
+
+
+    else if (targetEl.matches("#quiz-num11")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion3, 1500);
+    
+
+    }
+
+    else if (targetEl.matches("#quiz-num12")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion3, 1500);
+    
+
+    }
+
+    else if (targetEl.matches("#quiz-num13")) {
+
+        $ ("#answerc").show();
+
+        score++ ;
+
+
+        setTimeout(quizQuestion3, 1500);
+    
+
+    }
+
+    else if (targetEl.matches("#quiz-num14")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion3, 1500);
+
+    }
+
+// Page Three
+
+    else if (targetEl.matches("#quiz-num21")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion4, 1500);        
+
+    }
+
+    else if (targetEl.matches("#quiz-num22")) {
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion4, 1500);
+    }
+
+    else if (targetEl.matches("#quiz-num23")) {
+
+        $ ("#answerc").show();
+
+        score++ ;
+
+        setTimeout(quizQuestion4, 1500);
+
+    }
+
+    else if (targetEl.matches("#quiz-num24")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion4, 1500);
+
+    }
+
+// Page Four
+
+    else if (targetEl.matches("#quiz-num31")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion5, 1500);
+
+    }
+
+    else if (targetEl.matches("#quiz-num32")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion5, 1500);
+
+
+    }
+
+    else if (targetEl.matches("#quiz-num33")) {
+
+        $ ("#answerc").show();
+
+        score ++ ;
+
+
+        setTimeout(quizQuestion5, 1500);
+
+    }
+
+    else if (targetEl.matches("#quiz-num34")) {
+
+        $ ("#answerw").show();
+
+
+        setTimeout(quizQuestion5, 1500);
+
+    }
+
+// Page Five
+
+else if (targetEl.matches("#quiz-num41")) {
+
+    $ ("#answerw").show();
+
+
+    setTimeout(quizQuestion5, 1500);
+
 }
+
+else if (targetEl.matches("#quiz-num42")) {
+
+    $ ("#answerw").show();
+
+
+    setTimeout(quizQuestion5, 1500);
+
+
+}
+
+else if (targetEl.matches("#quiz-num43")) {
+
+    $ ("#answerw").show();
+
+
+    setTimeout(quizQuestion5, 1500);
+
+}
+
+else if (targetEl.matches("#quiz-num44")) {
+
+    $ ("#answerc").show();
+
+    score ++ ;
+
+
+    setTimeout(quizQuestion5, 1500);
+
+}
+
+
 };
 
-// for quiz buttons
-mainButtonsEl.addEventListener("click", taskButtonHandler);
+// Listen for Click Events on screen
+let clicks = mainButtonsEl.addEventListener("click", taskButtonHandler);
 
 startScreen();
-// debugger;

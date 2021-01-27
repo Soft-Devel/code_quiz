@@ -14,7 +14,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-.text {
+#text {
     margin: 5px;
     }
 
@@ -53,7 +53,7 @@ font-size: 18px;
 .high-scores {
 /* border: 3px red solid; */
 /* width: 35px; */
-margin: 25px;
+margin: 10px;
     }
 
 header a {
@@ -97,7 +97,7 @@ main .buttons .start-screen:hover {
     }
 
 .quiz-screen {
-    margin: 5px 0px 5px 245px;
+    margin: 5px 150px 5px 245px;
     padding-left: 20px;
     justify-content: flex-start;
     text-align: left;
@@ -154,6 +154,7 @@ input {
     width: 40%;
     height: 30px;
     margin: 0px 5px;
+    
     }
 
 .high-score-button {
