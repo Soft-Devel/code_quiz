@@ -1,6 +1,8 @@
 // Initialize Index.html containers.  Put section headings into variables.
 
 let mainButtonsEl = document.querySelector("#buttons");
+let mainTextEl = document.querySelector("#text");
+// let userInitials = document.querySelector("input");
 
 
 let score = 0;
@@ -21,6 +23,9 @@ let startScreen = function () {
     $ ("#start-screen1S").show();
     $ ("#start-screen2S").show();
     $("#start-screenS").show();
+    $("#high-score-numS").hide();
+    $("#high-score-buttonsS").hide();
+    $("#high-score-displayS").hide();
 
 };
 
@@ -92,9 +97,109 @@ let quizQuestion5 = function () {
     $("#quiz-screen5S").show();
     console.log("Score is:" + score);
 
+    // setTimeout(lastPage, 15000);
+
 };
 
 
+// Final Score Landing Page
+
+let lastPage = function () {
+
+    $("#quiz-questions41S").hide(); 
+    $("#quiz-screen5S").hide();
+    $("#answerc").hide();
+    $("#answerw").hide(); 
+    $("#initialsS").show();
+    // $("#initialsS").hide();
+    $("#high-score-buttonS").show();
+    // $("#high-score-buttonS").hide();
+    $("#inputS").show();
+//    $("#inputS").hide();
+
+    // let scoreDisplay = document.createElement("p");
+    // scoreDisplay.className = "final-score";
+
+    document.getElementById("final-score").innerHTML= "Your New Score is " +score;
+
+    // mainTextEl.appendChild(scoreDisplay);
+
+
+
+    // $("#high-score-buttonS").show();
+    $("#final-scoreS").show();
+    $("#end-screen-headingS").show();
+    // $ ("#high-scoresS").show();
+    // $ ("#timerS").show();
+
+    console.log("Final Score is" + score);
+
+};
+
+
+// After quiz is finished stores score and user's initials and loads high score screen
+
+let getUserInitials = function () {
+
+
+    let userInitials = document.getElementById("inputInitials").value;
+
+    // localStorage.setItem("initials", userInitials);
+
+    // localStorage.setItem("highscore", score);
+
+    console.log(userInitials);
+
+    let storedScore = localStorage.getItem("highscore");
+
+    if (!storedScore || storedScore < score) {
+
+        localStorage.setItem("initials", userInitials);
+
+        localStorage.setItem("highscore", score);
+
+        setTimeout(highScoreScreen, 1000);
+
+    } else 
+    
+       setTimeout(highScoreScreen, 1000);
+
+} ;
+
+let highScoreScreen = function (){
+
+    console.log("on final score screen now");
+
+    $("#final-scoreS").show();
+    $("#final-scoreS").hide();
+    $("#end-screen-headingS").hide();
+    $ ("#high-scoresS").hide();
+    $ ("#timerS").hide();
+
+    $("#initialsS").hide();
+    $("#high-score-buttonS").hide();
+    $("#inputS").hide();
+
+    $("#high-score-buttonsS").show();
+    $("#high-score-numS").show();
+    $("#high-score-displayS").show();
+
+    let initials = localStorage.getItem("initials");
+    let highScore = localStorage.getItem("highscore");
+
+    document.getElementById("high-score-num").innerHTML= "1. " + initials + " - " + highScore;
+
+
+
+
+};
+
+let goBackFunction = function () {
+
+    console.log("go back function triggered!");
+    setTimeout(startScreen, 500);
+
+};
 
 
 // Process Mouse Clicks
@@ -118,20 +223,20 @@ let taskButtonHandler = function(event) {
 
         $ ("#answerw").show();
 
-        setTimeout(quizQuestion2, 1500);
+        setTimeout(quizQuestion2, 500);
 
     } else if (targetEl.matches("#quiz-num2")) {
 
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion2, 1500);
+        setTimeout(quizQuestion2, 500);
 
     } else if (targetEl.matches("#quiz-num3")) {
 
         $ ("#answerw").show();
 
-        setTimeout(quizQuestion2, 1500);
+        setTimeout(quizQuestion2, 500);
     
 
     } else if (targetEl.matches("#quiz-num4")) {
@@ -142,7 +247,7 @@ let taskButtonHandler = function(event) {
         score++ ;
 
 
-        setTimeout(quizQuestion2, 1500);
+        setTimeout(quizQuestion2, 500);
 
     }
 
@@ -155,7 +260,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion3, 1500);
+        setTimeout(quizQuestion3, 500);
     
 
     }
@@ -165,7 +270,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion3, 1500);
+        setTimeout(quizQuestion3, 500);
     
 
     }
@@ -177,7 +282,7 @@ let taskButtonHandler = function(event) {
         score++ ;
 
 
-        setTimeout(quizQuestion3, 1500);
+        setTimeout(quizQuestion3, 500);
     
 
     }
@@ -187,7 +292,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion3, 1500);
+        setTimeout(quizQuestion3, 500);
 
     }
 
@@ -198,7 +303,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion4, 1500);        
+        setTimeout(quizQuestion4, 500);        
 
     }
 
@@ -206,7 +311,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion4, 1500);
+        setTimeout(quizQuestion4, 500);
     }
 
     else if (targetEl.matches("#quiz-num23")) {
@@ -215,7 +320,7 @@ let taskButtonHandler = function(event) {
 
         score++ ;
 
-        setTimeout(quizQuestion4, 1500);
+        setTimeout(quizQuestion4, 500);
 
     }
 
@@ -224,7 +329,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion4, 1500);
+        setTimeout(quizQuestion4, 500);
 
     }
 
@@ -235,7 +340,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion5, 1500);
+        setTimeout(quizQuestion5, 500);
 
     }
 
@@ -244,7 +349,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion5, 1500);
+        setTimeout(quizQuestion5, 500);
 
 
     }
@@ -256,7 +361,7 @@ let taskButtonHandler = function(event) {
         score ++ ;
 
 
-        setTimeout(quizQuestion5, 1500);
+        setTimeout(quizQuestion5, 500);
 
     }
 
@@ -265,7 +370,7 @@ let taskButtonHandler = function(event) {
         $ ("#answerw").show();
 
 
-        setTimeout(quizQuestion5, 1500);
+        setTimeout(quizQuestion5, 500);
 
     }
 
@@ -276,7 +381,7 @@ else if (targetEl.matches("#quiz-num41")) {
     $ ("#answerw").show();
 
 
-    setTimeout(quizQuestion5, 1500);
+    setTimeout(lastPage, 1000);
 
 }
 
@@ -285,7 +390,7 @@ else if (targetEl.matches("#quiz-num42")) {
     $ ("#answerw").show();
 
 
-    setTimeout(quizQuestion5, 1500);
+    setTimeout(lastPage, 1000);
 
 
 }
@@ -295,7 +400,7 @@ else if (targetEl.matches("#quiz-num43")) {
     $ ("#answerw").show();
 
 
-    setTimeout(quizQuestion5, 1500);
+    setTimeout(lastPage, 1000);
 
 }
 
@@ -306,9 +411,24 @@ else if (targetEl.matches("#quiz-num44")) {
     score ++ ;
 
 
-    setTimeout(quizQuestion5, 1500);
+    setTimeout(lastPage, 1000);
+
+} else if (targetEl.matches("#high-score-button")) {
+
+
+    getUserInitials();
+
+} else if (targetEl.matches("#go-back")) {
+
+    console.log("go back button pressed");
+
+    setTimeout(goBackFunction, 500);
+
+    
 
 }
+
+
 
 
 };
@@ -316,4 +436,7 @@ else if (targetEl.matches("#quiz-num44")) {
 // Listen for Click Events on screen
 let clicks = mainButtonsEl.addEventListener("click", taskButtonHandler);
 
+
+// highScoreScreen();
 startScreen();
+// lastPage();
